@@ -1,0 +1,227 @@
+/* Reset e estilo base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #101010; 
+    color: #fff; 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Fontes modernas */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Estilo do título h1 */
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00ffff, #007bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 1.2s ease-out;
+    letter-spacing: 2px;
+}
+
+/* Subtítulo h2 */
+h2 {
+    font-size: 2.5em;
+    color: #00e6e6;
+    margin-bottom: 20px;
+    border-left: 4px solid #00ffff;
+    padding-left: 15px;
+    font-weight: 500;
+}
+
+/* Títulos h3 */
+h3 {
+    font-size: 2.5em;
+    color: #1fd950;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-left: #0066cc solid 4px;
+    padding-left: 15px;
+}
+
+/* Títulos h4 */
+h4 {
+    font-size: 2em;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-left: #ff6f61 solid 4px;
+    padding-left: 15px;
+}
+/* Parágrafos */
+.texto1, .texto2, .texto3 {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d7d0d0;
+    animation: fadeIn 0.8s ease-out;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Botões */
+button {
+    background: linear-gradient(135deg, #00ffff, #007bff);
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 1.2em;
+    color: #030303;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.4s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 255, 255, 0.4);
+    background: linear-gradient(135deg, #00e6e6, #0066cc);
+    border-color: #00e6e6;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+header {
+    background: rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(8px);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+    animation: neonGlow 3s infinite alternate;
+    border-bottom: 2px solid #00ffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation-duration: 2s;
+}
+
+strong {
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 1.8rem;
+    animation: neonGlow 2s infinite pulse;
+    box-shadow: 0 0 40px #00ffff;
+    z-index: 100;
+    padding: 40px;
+    border-radius: 12px;
+    text-shadow: 0 0 10px #00ffff;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #00ffff;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.menu_rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.menu_rodape a{
+    font-size: 1.15em;
+    padding: 2px 20px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    color: #00ffff;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.menu_rodape a:hover {
+    background: #00ffff;
+    color: #0f2027;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .texto1, .texto2, .texto3 {
+        font-size: 1.1em;
+    }
+
+    button {
+        padding: 12px 22px;
+        font-size: 1.1em;
+    }
+
+    .menu_rodape a {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    .texto1, .texto2, .texto3 {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+
+    .menu_rodape {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

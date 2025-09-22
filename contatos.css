@@ -1,0 +1,210 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative; /* Adicionado para contexto do position: absolute */
+}
+
+p{ 
+    font-size: 1.1em; 
+    line-height: 1; 
+    margin-bottom: 14px; 
+    color: #e6e6e6; 
+    text-align: center; 
+    max-width: 600px; 
+    animation: slideIn 1s ease-out; 
+    text-shadow: 0 0 4px #000000;
+    position: relative; 
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 0 10px;
+    
+}
+
+strong {
+    color: #00ff55;
+    text-shadow: 0 0 6px #00ff55;
+}
+
+strong1 {
+    color: #00ffff;
+    font-weight: 600;
+    text-shadow: 0 0 6px #00ffff;
+}
+
+strong2 {
+    color: #42e700;
+    font-weight: 600;
+    text-shadow: 0 0 6px #42e700;
+}
+
+/* MENSAGEM */
+.mensagem {
+    text-align: center;
+    font-size: 1.6em;
+    color: #e6e6e6;
+    max-width: 700px;
+    margin: 40px auto 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 2px dotted #00ffff;
+    animation: slideIn 1s ease-out;
+    box-shadow: 0 0 10px #00ffff33;
+}
+
+/* CONTATO - GRID */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    padding: 20px;
+    animation: dropIn 1s ease-out;
+}
+
+/* CONTATO CARD - NEON */
+.contato-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    width: 260px;
+    text-align: center;
+    border-left: 5px solid #00ffd5;
+    box-shadow: 0 0 15px #00ffd544;
+    transition: all 0.3s ease;
+}
+
+.contato-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 0 6px #00ffff88;
+}
+
+.contato-card a {
+    display: inline-block;
+    padding: 12px 24px;
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 6px #00ffff;
+}
+
+.contato-card a:hover {
+    background: #00ffff;
+    color: #0f2027;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    transform: translateY(-3px);
+}
+
+/* Cores Individuais */
+.contato-card.whatsapp { border-color: #42e700; box-shadow: 0 0 15px #42e70044; }
+.contato-card.instagram { border-color: #ff0055; box-shadow: 0 0 15px #ff005544; }
+.contato-card.github { border-color: #00ffd5; }
+.contato-card.linkedin { border-color: #0077b5; }
+
+/* RODAPÉ */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 8px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -3px 12px #00ffff66;
+}
+
+/* MENU */
+.cabeçalho_menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.cabeçalho_menu_link {
+    color: #00ffff;
+    font-size: 1.1em;
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.cabeçalho_menu_link:hover {
+    background: #00ffff;
+    color: #0f2027;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+/* ANIMAÇÕES */
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes dropIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabeçalho_menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cabeçalho_menu_link {
+        padding: 10px 20px;
+    }
+
+    .contato-card {
+        width: 90%;
+    }
+
+    .mensagem {
+        font-size: 1.3em;
+        padding: 16px;
+    }
+}
