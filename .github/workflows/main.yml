@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Experiências</title>
+    <link rel="stylesheet" href="Experiências.css">
+    <script src="Experiências.js"></script>
+</head>
+<body>
+    <header>
+        <h1> <strong>Minhas Experiências</strong></h1>
+    </header>
+    <main>
+        <section>
+            <h2>Experiência HTML5</h2>
+            <p>Tenho ampla experiência em HTML5, incluindo a criação de layouts responsivos e acessíveis. Tendo como formação em tal pelos cursos de HTML5 da Alura</p>
+            <p>Além disso, realizei projetos práticos que me permitiram aplicar esses conhecimentos de forma eficaz. Onde os mesmos estão disponíveis no meu GitHub.</p>
+        </section>
+        <section>
+            <h3>Experiência CSS</h3>
+            <p>Tenho experiência em CSS, com foco em design responsivo e acessibilidade. Realizei cursos na Alura que me proporcionaram uma base sólida para a criação de interfaces atraentes e funcionais a partir da utilização de técnicas avançadas de layout e estilização.</p3>
+        </section>
+        <section>
+            <h4>Experiência JavaScript</h4>
+            <p>Possuo experiência em JavaScript, adquirida através de cursos na Alura e projetos práticos. Tenho conhecimento em manipulação do DOM, eventos, e integração com APIs.</p>
+            <p>Além disso, estou familiarizado com frameworks como React e Vue.js, o que me permite desenvolver aplicações web dinâmicas e interativas.</p>
+    </main>
+    <nav class="menu_rodape">
+        <a href="portifolio.html">Portfólio</a>
+        <a href="home.html">Home</a>
+        <a href="sobre mim.html">Sobre Mim</a>
+        <a href="contatos.html">Contato</a>
+        <a href="Experiências.html">Experiências</a>
+    </nav>
+</body>
+</html>
+document.addEventListener("DOMContentLoaded", () => {
+    // Animação de entrada para seções
+    const sections = document.querySelectorAll("main section");
+    sections.forEach((section, index) => {
+        section.style.opacity = 0;
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "all 1s ease";
+
+        setTimeout(() => {
+            section.style.opacity = 1;
+            section.style.transform = "translateY(0)";
+        }, index * 300); // delay entre seções
+    });
+
+    // Efeito de hover no menu do rodapé
+    const links = document.querySelectorAll(".menu_rodape a");
+    links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            link.style.color = "#007bff";
+            link.style.textDecoration = "underline";
+        });
+        link.addEventListener("mouseleave", () => {
+            link.style.color = "";
+            link.style.textDecoration = "none";
+        });
+    });
+
+    // Aviso se encontrar tags HTML malformadas como <p1>, <p2>, etc.
+    const invalidPTags = document.querySelectorAll("p1, p2, p3, p4, p5");
+    if (invalidPTags.length > 0) {
+        console.warn("⚠️ Aviso: Existem tags inválidas como <p1>, <p2> no HTML. Use apenas <p>.");
+        alert("Há elementos <p1>, <p2> no seu HTML. Substitua por <p> para evitar problemas de exibição.");
+    }
+
+    // Scroll suave se usar âncoras no futuro
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(ellipse at top, #0d0d0d, #000);
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    padding: 30px 15px;
+    text-align: center;
+    box-shadow: 0 0 15px #00ffff;
+    border-bottom: 2px solid #00ffff;
+}
+
+.header-container .destaque {
+    color: #2600ff;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #ff6969;
+    animation: neonGlow 2s infinite alternate;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #cccccc;
+}
+
+/* Títulos */
+h2 {
+    font-size: 2.2rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin: 40px auto;
+    padding-bottom: 10px;
+    max-width: 900px;
+    border-bottom: 2px solid #00ffff;
+    animation: neonGlow 2s infinite alternate;
+}
+
+/* Seções */
+section {
+    background: rgba(18, 18, 18, 0.7);
+    padding: 60px 20px;
+    margin: 40px auto;
+    max-width: 1100px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Apresentação */
+.apresentacao {
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto;
+    color: #b63d3d;
+}
+p.apresentacao-texto {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/*projetos em destaque*/
+.projetos-destaque {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+h3 {
+    font-size: 1.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff;
+    margin-bottom: 15px;
+}
+p {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+/* Lista Neon */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 40px auto;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out;
+}
+
+ul li {
+    margin: 15px 0;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    border-left: 5px solid;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul li::before {
+    content: "✔";
+    margin-right: 12px;
+    font-size: 1.2rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.li1 { color: #ff1744; border-color: #ff1744; text-shadow: 0 0 8px #ff1744; }
+.li2 { color: #00e676; border-color: #00e676; text-shadow: 0 0 8px #00e676; }
+.li3 { color: #2979ff; border-color: #2979ff; text-shadow: 0 0 8px #2979ff; }
+.li4 { color: #f500f5; border-color: #f500f5; text-shadow: 0 0 8px #f500f5; }
+
+ul li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
+}
+
+/* Botões Neon */
+.botoes-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.botao {
+    text-decoration: none;
+    background: transparent;
+    color: #00ffff;
+    padding: 14px 28px;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    font-weight: 600;
+    text-shadow: 0 0 8px #00ffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.botao:hover {
+    background-color: #00ffff;
+    color: #0f0f0f;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    transform: translateY(-3px);
+}
+
+/* Imagem perfil */
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff00ff;
+    box-shadow: 0 0 25px #ff00ff;
+    transition: transform 0.4s;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05);
+}
+
+/* Rodapé Neon */
+.menu_rodape {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1px 0;
+    z-index: 100;
+    box-shadow: 0 -3px 12px #00ffff;
+}
+
+.menu_rodape a {
+    font-size: 1em;
+    padding: 10px 24px;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-shadow: 0 0 8px #00ffff;
+}
+
+.menu_rodape a:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+
+/* Footer Neon */
+.footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 6px 0;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #00ffff;
+    box-shadow: 0 -1px 10px #00ffff;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+    100% { text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff; }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .botoes-inicio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .botao {
+        width: 90%;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 140px;
+        height: 140px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Luiz Felipe</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="home.js" defer></script>
+</head>
+
+<body>
+    <!-- Cabeçalho com apresentação -->
+    <header>
+        <div class="header-container">
+            <h1>Olá, me chamo <span class="destaque">Luiz Felipe!</span></h1>
+            <p class="subtitulo">Sou Desenvolvedor Front-End | Sites com designs mais realistas!</p>
+        </div>
+    </header>
+
+    <!-- Seção de apresentação geral -->
+    <section class="apresentacao">
+        <div class="container">
+            <p>Este espaço foi criado para apresentar minhas habilidades, experiências e projetos.</p>
+        </div>
+    </section>
+
+    <!-- Seção de habilidades -->
+    <section class="skills">
+        <div class="container">
+            <h2>Minhas Habilidades</h2>
+            <ul class="lista-habilidades">
+                <li>Html 5</li>
+                <li>Css 3</li>
+                <li>JavaScript</li>
+                <li>Design Responsivo</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção de projetos em destaque -->
+    <section class="projetos-destaque">
+        <div class="container">
+            <h2>Projetos em Destaque</h2>
+            <div class="cards-projetos">
+                <div class="card">
+                    <h3>Portifolio pessoal</h3>
+                    <p>Projeto desenvolvido com HTML, CSS e JavaScript puro. Design minimalista e adaptável.</p>
+                    <a href="projetos.html">Ver Projeto</a>
+                </div>
+                <div class="card">
+                    <h3>Relaxant's SPA</h3>
+                    <p>Site criado para uma empresa fictícia que oferece serviços de relaxamento pessoal. Utilizando linguagens HTML5, CSS e Javascript. </p>
+                    <a href="projetos.html">Ver Projeto</a>
+                </div>
+                <div class="card">
+                    <h3>Restaurante FLP</h3>
+                    <p>Projeto de um site de um restaurante incluindo cardapio, pedido funcional, utilizando HTML, CSS e JavaScript.</p>
+                    <a href="projetos.html">Ver Projeto</a>
+                </div>
+                <div class="card">
+                    <h3>Details Lava-Jato</h3>
+                    <p>Projeto de um site de um Lava-jato incluindo serviços taxas, contatos. Utilizando HTML5, CSS e JavaScript.</p>
+                    <a href="projetos.html">Ver Projeto</a>
+                </div>
+        </div>
+    </section>
+
+    <!-- Rodapé com navegação -->
+    <footer>
+        <nav class="menu_rodape">
+            <a href="portifolio.html">Portfólio</a>
+            <a href="home.html">Home</a>
+            <a href="sobre mim.html">Sobre mim</a>
+            <a href="contatos.html">Contatos</a>
+            <a href="Experiências.html">Experiências</a>
+        </nav>
+        <p class="copy">© 2025 Luiz Felipe. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Animação de entrada suave para elementos principais
+    const animarEntrada = (elementos, delay = 0) => {
+        elementos.forEach((el, index) => {
+            el.style.opacity = 0;
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease";
+
+            setTimeout(() => {
+                el.style.opacity = 1;
+                el.style.transform = "translateY(0)";
+            }, delay + index * 200);
+        });
+    };
+
+    animarEntrada([document.querySelector("header")], 0);
+    animarEntrada(document.querySelectorAll("section"), 500);
+    animarEntrada(document.querySelectorAll(".card"), 800);
+
+    // 2. Efeito de hover nos links do rodapé
+    const menuLinks = document.querySelectorAll("footer .menu_rodape a");
+    menuLinks.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            link.style.color = "#007bff";
+            link.style.textDecoration = "underline";
+        });
+        link.addEventListener("mouseleave", () => {
+            link.style.color = "";
+            link.style.textDecoration = "none";
+        });
+    });
+
+    // 3. Aviso de tags inválidas (li1, li2, etc.)
+    const tagsInvalidas = document.querySelectorAll("li1, li2, li3, li4, li5");
+    if (tagsInvalidas.length > 0) {
+        console.warn("⚠️ Tags inválidas encontradas como <li1>, <li2>, etc. Use apenas <li>.");
+        alert("Há tags inválidas no HTML (como <li1>, <li2>). Substitua por <li> para funcionar corretamente.");
+    }
+
+    // 4. Scroll suave para âncoras (se forem adicionadas)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", (e) => {
+            const destino = document.querySelector(link.getAttribute("href"));
+            if (destino) {
+                e.preventDefault();
+                destino.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});
+
+
+body {
+    background-color: #151516;
+    color: #535151;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 1.6rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.6rem;
+    color: rgb(26, 26, 27);
+    gap: 1rem;
+    box-shadow: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto 0.6rem auto;
+    animation: slideIn 1s ease-out;
+    background: linear-gradient(90deg, #02adad, #007bff);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #f7f7f7;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 1.6rem auto;
+    animation: dropIn 1s ease-out;
+    background: linear-gradient(90deg, #02adad, #007bff);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #00ffff;
+}
+
+.título-destaque {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: aliceblue; 
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+p1, p2, p3 {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 20px auto;
+    padding: 15px 25px;
+    max-width: 600px;
+    color: #ffffff; 
+    background: rgba(0, 0, 0, 0.7); /* Opacidade para suavizar o fundo */
+    border-left: 5px solid #4361ee;
+    border-right: 5px solid #4361ee;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
+        /* Efeito de hover para as tags p1, p2, p3 */
+.p1, .p2, .p3 {
+    display: block;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 20px auto;
+    padding: 20px 30px;
+    max-width: 600px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05); /* efeito vidro fosco */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
+/* Efeito de hover para as tags p1, p2, p3 */
+.p1 {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    background: rgba(0, 0, 0, 0.85);
+    border-left: 6px solid #00ffff;
+    border-right: 6px solid #00ffff;   
+}
+.p2 {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    background: rgba(0, 0, 0, 0.85);
+    border-left: 6px solid #00ffff;
+    border-right: 6px solid #00ffff;
+}
+.p3 {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    background: rgba(0, 0, 0, 0.85);
+    border-left: 6px solid #00ffff;
+    border-right: 6px solid #00ffff;
+}
+/* Efeito de animação para entradas */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+button {
+    background: linear-gradient(45deg, #00ffff, #007bff);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: #0f2027;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+    background: linear-gradient(45deg, #00e6e6, #0066cc);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+
+.container {
+    margin: 20px;
+    padding: 30px 20px;
+ }
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+    
+.img {
+    display: block;
+    margin: 0 auto 1.25rem auto;
+    max-width: 18.75rem;
+    height: auto;
+    border-radius: 0.625rem; 
+    text-align: center;
+}
+        
+footer p {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center; 
+    margin: 0;
+    padding: 10px 0;
+}
+
+.menu_rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.menu_rodape a{
+    font-size: 1.15em;
+    padding: 2px 20px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    color: #00ffff;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.menu_rodape a:hover {
+    background: #00ffff;
+    color: #0f2027;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+footer {
+    background-color: #000;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    animation: neonGlow 2s infinite alternate;
+    position: relative; /* <-- Remover fixed */
+    bottom: auto;       /* <-- Remover bottom */
+    margin-top: 40px;   /* Espaçamento acima do footer */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #020202be;
+}
+         
+main {
+    flex: 1;
+    background-color: #020202;
+    color: #535151;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 1.25rem;
+    animation: fadeIn 1s ease-out;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid #00ffff;
+    animation: neonGlow 2s infinite alternate;
+    backdrop-filter: blur(8px);
+    strong {
+        color: #00ffff;
+        font-weight: bold;
+        font-size: 1.8rem;
+        animation: neonGlow 3s infinite alternate;
+    }
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolio</title>
+    <link rel="stylesheet" href="portifolio.css">
+    <script src="portifolio.js"></script>
+</head>
+<body>
+    <nav class="menu_rodape">
+       <a href="portifolio.html">Portfólio</a>      
+       <a href="home.html">Home</a>
+       <a href="sobre mim.html">Sobre Mim</a>
+       <a href="contatos.html">Contato</a>
+       <a href="Experiências.html">Experiências</a>
+    </nav>
+
+    <main class="apresentação">
+        <section>
+            <h1>Olá! Seja bem-vindo ao meu portfólio</h1>
+            <h2>Meu nome é <strong>Luiz Felipe Oliveira Souza</strong></h2>
+            <strong class="título-destaque">Sou um programador front-end, com foco em linguagens css e html!</strong>
+            <p class="p1">Quer ter um site mais imersivo e visualmente atraente? Vamos trabalhar juntos para criar uma experiência incrível para seus usuários!</p1>
+            <p class="p2">Explore meus projetos e veja como posso ajudar a transformar suas ideias em realidade.</p2>
+            <p class="p3">Estou sempre aberto a novas oportunidades e desafios. Fique a vontade para interagir!</p3>
+        </section>        
+    </main>
+</body>
+</html>
+// Mensagem de boas-vindas ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Bem-vindo ao portfólio de Luiz Felipe!");
+});
+
+// Efeito hover no menu
+const menuLinks = document.querySelectorAll(".menu_rodape a");
+menuLinks.forEach(link => {
+    link.addEventListener("mouseover", () => {
+        link.style.color = "#007bff"; // cor ao passar o mouse
+    });
+    link.addEventListener("mouseout", () => {
+        link.style.color = ""; // volta à cor original
+    });
+});
+
+// Scroll suave para navegação (caso use âncoras internas no futuro)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
+// Criar botão "voltar ao topo"
+const backToTop = document.createElement("button");
+backToTop.innerText = "↑ Topo";
+backToTop.id = "backToTop";
+Object.assign(backToTop.style, {
+    position: "fixed",
+    bottom: "30px",
+    right: "30px",
+    padding: "10px 15px",
+    fontSize: "16px",
+    display: "none",
+    backgroundColor: "#333",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    zIndex: 1000
+});
+document.body.appendChild(backToTop);
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            max-width: 700px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        button {
+            background: linear-gradient(45deg, #00ffff, #007bff);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 1em;
+            color: #0f2027;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+            background: linear-gradient(45deg, #00e6e6, #0066cc);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        
+            .menu_rodape {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        .menu_rodape a {
+            font-size: 1em;
+            padding: 10px 20px;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+            color: #00ffff;
+            text-decoration: none;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .menu_rodape a:hover {
+            background: #00ffff;
+            color: #0f2027;
+            box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+        }
+    }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sobre mim.css">
+    <script src="sobre mim.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sobre Mim</h1>
+        <p>Olá! Meu nome é <strong>Luiz Felipe Oliveira Souza</strong>, tenho 19 anos e sou um entusiasta da programação front-end. Desde cirança, sempre fui fascinado por tecnologia e design em carros, e esse ano desenvolvi interesse no ramo da programação, focando em front-end, o que me levou a explorar o mundo do desenvolvimento web e seus designs.</p>
+        <p>Atualmente, estou me aprofundando no conhecimento de <strong>HTML</strong> e <strong>CSS</strong>, buscando aprimorar minhas habilidades e criar interfaces de usuário cada vez mais intuitivas e responsivas.</p>
+        <p>Meu objetivo é contribuir para projetos que valorizem a experiência do usuário, combinando estética e funcionalidade de maneira harmoniosa. Estou sempre aberto a novos desafios e oportunidades de aprendizado na área de desenvolvimento web.</p>
+        
+        <button onclick="location.href='portifolio.html'">Portfólio</button>
+        <button onclick="location.href='home.html'">Home</button>
+        <button onclick="location.href='sobre mim.html'">Sobre Mim</button>
+        <button onclick="location.href='contatos.html'">Contato</button>
+        <button onclick="location.href='Experiências.html'">Experiências</button>
+    </div>
+</body>
+</html>
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Animação de entrada do conteúdo
+    const container = document.querySelector(".container");
+    container.style.opacity = 0;
+    container.style.transform = "translateY(30px)";
+    container.style.transition = "all 1s ease";
+
+    setTimeout(() => {
+        container.style.opacity = 1;
+        container.style.transform = "translateY(0)";
+    }, 300);
+
+    // 2. Efeito de hover nos botões
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.addEventListener("mouseenter", () => {
+            button.style.backgroundColor = "#007bff";
+            button.style.color = "#fff";
+            button.style.transition = "all 0.3s";
+        });
+        button.addEventListener("mouseleave", () => {
+            button.style.backgroundColor = "";
+            button.style.color = "";
+        });
+    });
+
+    // 3. Scroll suave para links com âncoras (se usados futuramente)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+
+    // 4. Correção automática de erro de digitação
+    const texto = container.innerHTML;
+    const textoCorrigido = texto.replace(/cirança/gi, "criança");
+    if (texto !== textoCorrigido) {
+        container.innerHTML = textoCorrigido;
+        console.warn("🚨 Palavra corrigida: 'cirança' → 'criança'");
+    }
+
+    // 5. Alerta se encontrar tags inválidas como <p1>, <button1> etc.
+    const tagsInvalidas = document.querySelectorAll("p1, button1, div1, span1");
+    if (tagsInvalidas.length > 0) {
+        alert("⚠️ Existem tags HTML inválidas como <p1>, <button1>. Substitua por tags corretas.");
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Animação na mensagem principal
+    const mensagem = document.querySelector('.mensagem');
+    mensagem.style.opacity = 0;
+    mensagem.style.transition = "opacity 2s";
+    setTimeout(() => {
+        mensagem.style.opacity = 1;
+    }, 500);
+
+    // Hover nos cartões de contato
+    const cards = document.querySelectorAll('.contato-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'scale(1.05)';
+            card.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'scale(1)';
+            card.style.boxShadow = '';
+        });
+    });
+
+    // Scroll suave nos links do rodapé
+    const linksRodape = document.querySelectorAll('footer nav a');
+    linksRodape.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Se for um link âncora interno, ativa scroll suave
+            const href = link.getAttribute('href');
+            if (href.startsWith("#")) {
+                e.preventDefault();
+                const destino = document.querySelector(href);
+                if (destino) {
+                    destino.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // Verificação de conectividade
+    if (!navigator.onLine) {
+        alert("Você está offline! Alguns links podem não funcionar.");
+    }
+
+    // Validação de links externos (opcional, simples)
+    const externalLinks = document.querySelectorAll('.contato-card a');
+    externalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const url = link.href;
+            // Aqui você poderia fazer uma verificação extra com fetch se quiser.
+            console.log(`Abrindo link externo: ${url}`);
+        });
+    });
+});
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative; /* Adicionado para contexto do position: absolute */
+}
+
+p{ 
+    font-size: 1.1em; 
+    line-height: 1; 
+    margin-bottom: 14px; 
+    color: #e6e6e6; 
+    text-align: center; 
+    max-width: 600px; 
+    animation: slideIn 1s ease-out; 
+    text-shadow: 0 0 4px #000000;
+    position: relative; 
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 0 10px;
+    
+}
+
+strong {
+    color: #00ff55;
+    text-shadow: 0 0 6px #00ff55;
+}
+
+strong1 {
+    color: #00ffff;
+    font-weight: 600;
+    text-shadow: 0 0 6px #00ffff;
+}
+
+strong2 {
+    color: #42e700;
+    font-weight: 600;
+    text-shadow: 0 0 6px #42e700;
+}
+
+/* MENSAGEM */
+.mensagem {
+    text-align: center;
+    font-size: 1.6em;
+    color: #e6e6e6;
+    max-width: 700px;
+    margin: 40px auto 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 2px dotted #00ffff;
+    animation: slideIn 1s ease-out;
+    box-shadow: 0 0 10px #00ffff33;
+}
+
+/* CONTATO - GRID */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    padding: 20px;
+    animation: dropIn 1s ease-out;
+}
+
+/* CONTATO CARD - NEON */
+.contato-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    width: 260px;
+    text-align: center;
+    border-left: 5px solid #00ffd5;
+    box-shadow: 0 0 15px #00ffd544;
+    transition: all 0.3s ease;
+}
+
+.contato-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 0 6px #00ffff88;
+}
+
+.contato-card a {
+    display: inline-block;
+    padding: 12px 24px;
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 6px #00ffff;
+}
+
+.contato-card a:hover {
+    background: #00ffff;
+    color: #0f2027;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    transform: translateY(-3px);
+}
+
+/* Cores Individuais */
+.contato-card.whatsapp { border-color: #42e700; box-shadow: 0 0 15px #42e70044; }
+.contato-card.instagram { border-color: #ff0055; box-shadow: 0 0 15px #ff005544; }
+.contato-card.github { border-color: #00ffd5; }
+.contato-card.linkedin { border-color: #0077b5; }
+
+/* RODAPÉ */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 8px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -3px 12px #00ffff66;
+}
+
+/* MENU */
+.cabeçalho_menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.cabeçalho_menu_link {
+    color: #00ffff;
+    font-size: 1.1em;
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.cabeçalho_menu_link:hover {
+    background: #00ffff;
+    color: #0f2027;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+/* ANIMAÇÕES */
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes dropIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabeçalho_menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cabeçalho_menu_link {
+        padding: 10px 20px;
+    }
+
+    .contato-card {
+        width: 90%;
+    }
+
+    .mensagem {
+        font-size: 1.3em;
+        padding: 16px;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="contatos.css"> 
+    <script src="contatos.js"></script>
+</head>
+<body>
+
+    <div class="mensagem">
+        <p>Entre em contato comigo através das <strong1>redes sociais</strong1> ou por meio do <strong2>WhatsApp!</strong2></p>
+    </div>
+
+    <div class="container">
+        <div class="contato-card whatsapp">
+            <h3>WhatsApp</h3>
+            <a href="https://web.whatsapp.com/+5579920000385" target="_blank">Clique aqui</a>
+        </div>
+
+        <div class="contato-card instagram">
+            <h3>Instagram</h3>
+            <a href="https://www.instagram.com/luizfelipeosz/" target="_blank">Clique aqui</a>
+        </div>
+
+        <div class="contato-card github">
+            <h3>GitHub</h3>
+            <a href="https://github.com/Felpsd24" target="_blank">Clique aqui</a>
+        </div>
+
+        <div class="contato-card linkedin">
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/luiz-felipe-oliveira-souza-9a488b372/" target="_blank">Clique aqui</a>
+        </div>
+    </div>
+
+    <footer>
+        <nav class="cabeçalho_menu">
+            <a class="cabeçalho_menu_link" href="portifolio.html">Portfólio</a> 
+            <a class="cabeçalho_menu_link" href="home.html">Home</a>
+            <a class="cabeçalho_menu_link" href="sobre mim.html">Sobre Mim</a>
+            <a class="cabeçalho_menu_link" href="contato.html">Contato</a>
+            <a class="cabeçalho_menu_link" href="Experiências.html">Experiências</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
+/* Reset e estilo base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #101010; 
+    color: #fff; 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Fontes modernas */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Estilo do título h1 */
+h1 {
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #00ffff, #007bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 1.2s ease-out;
+    letter-spacing: 2px;
+}
+
+/* Subtítulo h2 */
+h2 {
+    font-size: 2.5em;
+    color: #00e6e6;
+    margin-bottom: 20px;
+    border-left: 4px solid #00ffff;
+    padding-left: 15px;
+    font-weight: 500;
+}
+
+/* Títulos h3 */
+h3 {
+    font-size: 2.5em;
+    color: #1fd950;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-left: #0066cc solid 4px;
+    padding-left: 15px;
+}
+
+/* Títulos h4 */
+h4 {
+    font-size: 2em;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-left: #ff6f61 solid 4px;
+    padding-left: 15px;
+}
+/* Parágrafos */
+.texto1, .texto2, .texto3 {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #d7d0d0;
+    animation: fadeIn 0.8s ease-out;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Botões */
+button {
+    background: linear-gradient(135deg, #00ffff, #007bff);
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 1.2em;
+    color: #030303;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.4s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 255, 255, 0.4);
+    background: linear-gradient(135deg, #00e6e6, #0066cc);
+    border-color: #00e6e6;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+header {
+    background: rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(8px);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+    animation: neonGlow 3s infinite alternate;
+    border-bottom: 2px solid #00ffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation-duration: 2s;
+}
+
+strong {
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 1.8rem;
+    animation: neonGlow 2s infinite pulse;
+    box-shadow: 0 0 40px #00ffff;
+    z-index: 100;
+    padding: 40px;
+    border-radius: 12px;
+    text-shadow: 0 0 10px #00ffff;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #00ffff;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.menu_rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.menu_rodape a{
+    font-size: 1.15em;
+    padding: 2px 20px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    color: #00ffff;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.menu_rodape a:hover {
+    background: #00ffff;
+    color: #0f2027;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .texto1, .texto2, .texto3 {
+        font-size: 1.1em;
+    }
+
+    button {
+        padding: 12px 22px;
+        font-size: 1.1em;
+    }
+
+    .menu_rodape a {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    .texto1, .texto2, .texto3 {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+
+    .menu_rodape {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
