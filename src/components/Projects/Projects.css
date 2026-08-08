@@ -400,7 +400,11 @@ transition: width 400ms ease;
 @media (max-width: 900px) {
 .section-heading {
 grid-template-columns: 1fr;
+
+```
 gap: 20px;
+```
+
 }
 
 .projects__track {
