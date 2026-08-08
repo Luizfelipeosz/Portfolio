@@ -1,0 +1,173 @@
+.contact {
+  position: relative;
+
+  padding: 180px 0;
+
+  overflow: hidden;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.contact::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: var(--color-accent);
+
+  opacity: 0.035;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+.contact__container {
+  position: relative;
+
+  text-align: center;
+}
+
+.contact__number {
+  margin-bottom: 18px;
+
+  color: var(--color-accent);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.contact__eyebrow {
+  margin-bottom: 20px;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.contact h2 {
+  margin-bottom: 28px;
+
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+}
+
+.contact h2 span {
+  display: block;
+
+  color: #eaee0f;
+
+  -webkit-text-stroke: 1px var(--color-text);
+}
+
+.contact__description {
+  max-width: 500px;
+
+  margin: 0 auto 40px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.contact__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--color-text);
+
+  color: #3a3a25;
+
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.contact__email:hover {
+  color: var(--color-accent);
+
+  border-color: var(--color-accent);
+}
+
+.contact__email svg {
+  font-size: 0.75rem;
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 70px;
+}
+
+.contact__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  color: var(--color-text-muted);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.contact__links a:hover {
+  border-color: rgba(199, 255, 74, 0.3);
+
+  background: rgba(199, 255, 74, 0.04);
+
+  color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 120px 0;
+  }
+
+  .contact h2 {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+  }
+
+  .contact__email {
+    font-size: 0.9rem;
+  }
+
+  .contact__links {
+    flex-wrap: wrap;
+
+    margin-top: 50px;
+  }
+}

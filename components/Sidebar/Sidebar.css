@@ -1,0 +1,43 @@
+.sidebar {
+  position: fixed;
+  left: 28px;
+  bottom: 0;
+  z-index: 900;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.sidebar a {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  color: var(--color-text-muted);
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.sidebar a:hover {
+  color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.sidebar__line {
+  width: 1px;
+  height: 70px;
+
+  background: var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+}

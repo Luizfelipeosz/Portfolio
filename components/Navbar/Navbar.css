@@ -1,0 +1,132 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: rgba(8, 9, 11, 0.75);
+  backdrop-filter: blur(18px);
+}
+
+.navbar__container {
+  width: min(
+    calc(100% - 48px),
+    var(--container-width)
+  );
+
+  height: 80px;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  transition: var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__links > a,
+.navbar__contact-button {
+  color: var(--color-text-secondary);
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  transition: var(--transition-fast);
+}
+
+.navbar__links > a:hover,
+.navbar__contact-button:hover {
+  color: var(--color-text);
+}
+
+.navbar__contact {
+  position: relative;
+}
+
+.navbar__contact-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__contact-button svg {
+  font-size: 0.65rem;
+  transition: transform var(--transition-fast);
+}
+
+.navbar__contact-button.is-open svg {
+  transform: rotate(180deg);
+}
+
+.navbar__contact-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  right: 0;
+
+  min-width: 180px;
+
+  padding: 8px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: rgba(16, 18, 22, 0.95);
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.navbar__contact-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 12px;
+
+  border-radius: var(--radius-sm);
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.85rem;
+
+  transition: var(--transition-fast);
+}
+
+.navbar__contact-menu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+}
+
+.navbar__contact-menu svg {
+  font-size: 0.9rem;
+}
