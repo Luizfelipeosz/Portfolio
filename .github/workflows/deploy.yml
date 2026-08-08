@@ -1,3 +1,4 @@
+@"
 name: Deploy to GitHub Pages
 
 on:
@@ -41,3 +42,4 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+"@ | Set-Content -Path ".github\workflows\deploy.yml" -Encoding utf8
