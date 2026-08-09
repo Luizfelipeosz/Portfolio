@@ -57,8 +57,7 @@ npm run build
 
 ## Deploy
 
-O projeto está publicado utilizando **GitHub Pages**, com build automatizado a partir do repositório.
-
+[(https://luizfelipeosz.github.io/Portfolio/)]
 ---
 
 **React · TypeScript · Vite · Front-End**
