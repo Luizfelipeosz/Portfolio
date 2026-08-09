@@ -401,9 +401,9 @@ transition: width 400ms ease;
 .section-heading {
 grid-template-columns: 1fr;
 
-```
+
 gap: 20px;
-```
+
 
 }
 
