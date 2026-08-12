@@ -1,10 +1,14 @@
 # Portfolio
 
-Portfólio profissional desenvolvido para apresentar projetos, competências técnicas e experiências em desenvolvimento Front-End.
+A professional portfolio built to showcase Front-End projects, technical skills, and software development experience.
 
-A aplicação foi estruturada com foco em **arquitetura, componentização, responsividade, organização de código e experiência do usuário**, utilizando React e TypeScript.
+The application was designed with a focus on **architecture, componentization, responsive design, code organization, and user experience**, using React and TypeScript.
 
-## Stack
+🔗 **Live Project:** [Portfolio](https://luizfelipeosz.github.io/Portfolio/)
+
+---
+
+## Tech Stack
 
 * React
 * TypeScript
@@ -13,9 +17,11 @@ A aplicação foi estruturada com foco em **arquitetura, componentização, resp
 * CSS3
 * React Icons
 
-## Arquitetura
+---
 
-O projeto utiliza uma estrutura baseada em componentes e separação de responsabilidades, buscando facilitar manutenção, reutilização e evolução da aplicação.
+## Architecture
+
+The project follows a component-based structure with clear separation of responsibilities, making the codebase easier to maintain, reuse, and extend.
 
 ```text
 src/
@@ -28,37 +34,64 @@ src/
 └── main.tsx
 ```
 
-## Funcionalidades
+---
 
-* Apresentação profissional
-* Projetos com descrição e tecnologias utilizadas
-* Navegação entre seções
-* Links para demonstrações e repositórios
-* Layout responsivo
-* Interface adaptada para diferentes dispositivos
-* Componentes reutilizáveis
+## Features
 
-## Desenvolvimento
+* Professional presentation
+* Project showcase with descriptions and technologies
+* Section-based navigation
+* Links to live demonstrations and repositories
+* Responsive layout
+* Cross-device interface adaptation
+* Reusable components
 
-O projeto foi construído considerando não apenas a interface, mas também aspectos de **estrutura, manutenção e escalabilidade**, mantendo uma base preparada para inclusão de novos projetos e funcionalidades.
+---
 
-## Execução
+## Development
+
+The project was built with a focus not only on the visual interface, but also on **structure, maintainability, and long-term evolution**.
+
+The codebase provides a foundation for adding new projects, sections, and features without requiring significant changes to the existing structure.
+
+---
+
+## Getting Started
+
+Install the project dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Para gerar o build de produção:
+To generate the production build:
 
 ```bash
 npm run build
 ```
 
-## Deploy
-
-[(https://luizfelipeosz.github.io/Portfolio/)]
 ---
 
-**React · TypeScript · Vite · Front-End**
+## Deployment
 
+The portfolio is deployed using GitHub Pages.
+
+🔗 **Live Project:** https://luizfelipeosz.github.io/Portfolio/
+
+---
+
+## Author
+
+**Luiz Felipe Oliveira Souza**
+
+**Front-End Developer Jr. | React · TypeScript · Next.js**
+
+🔗 [GitHub](https://github.com/Luizfelipeosz)
+
+🔗 [LinkedIn](https://linkedin.com/in/luiz-felipe-o-souza-9a488b372)
